@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PANGEYA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>PANGEYA</h1>
+    <nav id="nav">
+      <button id="btnLogin">Login</button>
+      <button id="btnLogout" hidden>Logout</button>
+      <button id="btnTeacher" hidden>Teacher Mode</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="viewList">
+      <h2>My Essays</h2>
+      <button id="btnNew">+ New Essay</button>
+      <ul id="essayList"></ul>
+    </section>
+
+    <section id="viewEditor" hidden>
+      <input id="editorTitle" placeholder="Title">
+      <textarea id="editorContent" placeholder="Write your essay..."></textarea>
+      <div>
+        <button id="btnSave">Save Draft</button>
+        <button id="btnPublish">Publish</button>
+        <button id="btnBack">Back</button>
+      </div>
+    </section>
+
+    <section id="viewRead" hidden>
+      <h2 id="readTitle"></h2>
+      <div id="readContent"></div>
+      <div id="feedbackSection" hidden>
+        <h3>Teacher Feedback</h3>
+        <div id="feedbackDisplay"></div>
+        <textarea id="feedbackInput" placeholder="Write feedback..."></textarea>
+        <button id="btnFeedback">Submit Feedback</button>
+      </div>
+      <button id="btnEdit" hidden>Edit</button>
+      <button id="btnBackRead">Back</button>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
