@@ -2,8 +2,15 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getAuth, signInWithPopup, signOut, GoogleAuthProvider, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { getFirestore, collection, doc, getDoc, getDocs, setDoc, query, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-const firebaseConfig = { /* TODO: Add your config */ };
-const app = initializeApp(firebaseConfig);
+const firebaseConfig = {
+  apiKey: "AIzaSyD0BuLbFfS--LQayl2kh0-H-wsHFILGo",
+  authDomain: "manus-pangeya.firebaseapp.com",
+  projectId: "manus-pangeya",
+  storageBucket: "manus-pangeya.firebasestorage.app",
+  messagingSenderId: "641791393166",
+  appId: "1:641791393166:web:d70213f436bd3bcd4538df",
+  measurementId: "G-MBNWLNBF6X"
+};const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
