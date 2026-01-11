@@ -10,7 +10,8 @@ const firebaseConfig = {
   messagingSenderId: "641791393166",
   appId: "1:641791393166:web:d70213f436bd3bcd4538df",
   measurementId: "G-MBNWLNBF6X"
-};const app = initializeApp(firebaseConfig);
+};
+const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
@@ -31,7 +32,8 @@ import { signInWithRedirect, getRedirectResult } from
 document.getElementById("btnLogin").onclick = () => {
   const provider = new GoogleAuthProvider();
   signInWithRedirect(auth, provider);
-};document.getElementById("btnLogout").onclick = () => signOut(auth);
+};
+document.getElementById("btnLogout").onclick = () => signOut(auth);
 document.getElementById("btnTeacher").onclick = unlockTeacher;
 
 onAuthStateChanged(auth, async (user) => {
