@@ -25,8 +25,13 @@ const $read = document.getElementById("viewRead");
 const $essayList = document.getElementById("essayList");
 
 // Auth
-document.getElementById("btnLogin").onclick = () => signInWithPopup(auth, new GoogleAuthProvider());
-document.getElementById("btnLogout").onclick = () => signOut(auth);
+import { signInWithRedirect, getRedirectResult } from 
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+document.getElementById("btnLogin").onclick = () => {
+  const provider = new GoogleAuthProvider();
+  signInWithRedirect(auth, provider);
+};document.getElementById("btnLogout").onclick = () => signOut(auth);
 document.getElementById("btnTeacher").onclick = unlockTeacher;
 
 onAuthStateChanged(auth, async (user) => {
@@ -137,3 +142,12 @@ async function unlockTeacher() {
   if (snap.exists()) { isTeacher = true; alert("Teacher mode unlocked"); }
   else alert("Not on whitelist");
 }
+getRedirectResult(auth)
+  .then((result) => {
+    if (result && result.user) {
+      console.log("Logged in:", result.user.email);
+    }
+  })
+  .catch((error) => {
+    console.error("Login error:", error);
+  });
